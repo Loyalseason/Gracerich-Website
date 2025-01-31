@@ -1,4 +1,4 @@
-<section id="core-products" class="py-8 mt-10">
+<section id="core-products" class="py-15 mt-5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-3xl font-semibold text-gray-800">Our Core Products</h2>
       <p class="mt-4 text-lg text-gray-600">We offer a wide range of high-quality products that meet the needs of our customers. Our core products are designed to deliver exceptional value and performance.</p>
@@ -9,7 +9,7 @@
           <div class="flex transition-transform duration-500 ease-in-out" [style.transform]="'translateX(-' + (currentIndex * 100) + '%)'">
             <!-- Product Items -->
             <div *ngFor="let product of products" class="flex-none w-full">
-              <div class="flex flex-col md:flex-row gap-6 bg-white rounded-lg shadow-lg overflow-hidden">
+              <div class="flex flex-col md:flex-row gap-6 rounded-lg overflow-hidden">
                 <!-- Left side: Image -->
                 <div class="md:w-1/2">
                   <img [src]="product.image" class="w-full h-64 md:h-96 object-cover" [alt]="product.title">

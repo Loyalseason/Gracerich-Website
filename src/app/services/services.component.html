@@ -1,1 +1,15 @@
-<p>services works!</p>
+<section class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Our Services</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <div *ngFor="let service of services" 
+             class="text-center p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl transition-all duration-300">
+          <div class="flex justify-center mb-4">
+            <i [class]="service.iconClass" class="w-12 h-12"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-900">{{ service.title }}</h3>
+          <p class="text-gray-600">{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>

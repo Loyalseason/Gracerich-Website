@@ -1,0 +1,22 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.sticky {
+  @media (min-width: 768px) {
+    position: sticky;
+    top: 0;
+    height: fit-content;
+  }
+}
+
+.content-wrapper {
+  padding: 1rem 0;
+}
+
+@media (max-width: 767px) {
+  .sticky {
+    position: static;
+  }
+}
