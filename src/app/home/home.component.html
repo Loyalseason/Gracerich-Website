@@ -1,12 +1,12 @@
 <app-nav-bar></app-nav-bar>
 
-<section class="relative flex items-center justify-center h-96 bg-gray-100 rounded-b-lg shadow-lg overflow-hidden">
+<section class="relative flex items-center justify-center h-96 sm:h-96 bg-gray-100 rounded-b-lg shadow-lg overflow-hidden">
   <!-- Image Background -->
   <div class="absolute inset-0">
     <img 
       src="images/bakerybackground.jpg" 
       alt="Background Image" 
-      class="w-full h-full object-cover">
+      class="w-full h-full object-cover animate-fade-in">
   </div>
 
   <!-- Overlay -->
@@ -14,7 +14,13 @@
 
   <!-- Content -->
   <div class="relative z-10 text-center text-white">
-    <h2 class="text-2xl md:text-4xl font-bold">Overlayed Content</h2>
-    <p class="text-sm md:text-lg mt-2">This is where additional content or a description could go.</p>
+    <h2 class="text-3xl md:text-4xl font-bold text-cream-800 animate-slide-in">
+      Bespoke Baked Goods
+    </h2>
+    <!-- <p class="text-xl  animate-slide-in-delay-200">Made Just for You</p> -->
+    <p class="text-sm md:text-lg mt-2 text-white-600 animate-slide-in-delay-400 px-4 sm:px-6 md:px-8">
+      Crafted with the finest ingredients and a sprinkle of love every bite is a moment of happiness.
+    </p>
+    
   </div>
 </section>

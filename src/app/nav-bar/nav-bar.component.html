@@ -1,32 +1,31 @@
 <header class="fixed top-0 left-0 w-full z-20 transition-all duration-300" id="nav-bar">
-    <nav class="container mx-auto px-4 py-2 flex justify-between items-center bg-transparent text-white">
-      <!-- Logo -->
-      <div class="text-2xl font-bold">Brand</div>
-  
-      <!-- Navigation Links -->
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="#" class="hover:text-gray-300">Home</a></li>
-        <li><a href="#" class="hover:text-gray-300">About</a></li>
-        <li><a href="#" class="hover:text-gray-300">Services</a></li>
-        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
-      </ul>
-  
-      <!-- Hamburger Menu for Mobile -->
-      <button 
-        id="menu-toggle" 
-        class="block md:hidden text-white focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-        </svg>
-      </button>
-    </nav>
-  
-    <!-- Mobile Menu -->
-    <ul id="menu" class="hidden md:hidden flex-col bg-gray-800 text-white space-y-2 p-4">
-      <li><a href="#" class="block hover:text-gray-300">Home</a></li>
-      <li><a href="#" class="block hover:text-gray-300">About</a></li>
-      <li><a href="#" class="block hover:text-gray-300">Services</a></li>
-      <li><a href="#" class="block hover:text-gray-300">Contact</a></li>
+  <nav class="container mx-auto px-4 py-2 flex justify-between items-center bg-transparent text-white">
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+      <img src="images/logo.png" alt="Gracerich Enterprise Logo" class="h-20 sm:h-24 md:h-28">
+    </div>
+    
+    <!-- Navigation Links -->
+    <ul class="hidden md:flex space-x-6">
+      <li><a href="#" class="hover:text-gray-300">Home</a></li>
+      <li><a href="#" class="hover:text-gray-300">About</a></li>
+      <li><a href="#" class="hover:text-gray-300">Services</a></li>
+      <li><a href="#" class="hover:text-gray-300">Contact</a></li>
     </ul>
-  </header>
   
+    <!-- Hamburger Menu for Mobile -->
+    <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </nav>
+  
+  <!-- Mobile Menu -->
+  <ul id="menu" class="hidden md:hidden flex-col bg-gray-800 text-white space-y-2 p-4">
+    <li><a href="#" class="block hover:text-gray-300">Home</a></li>
+    <li><a href="#" class="block hover:text-gray-300">About</a></li>
+    <li><a href="#" class="block hover:text-gray-300">Services</a></li>
+    <li><a href="#" class="block hover:text-gray-300">Contact</a></li>
+  </ul>
+</header>
