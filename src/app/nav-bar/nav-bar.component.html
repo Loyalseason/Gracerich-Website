@@ -1,31 +1,99 @@
-<header class="fixed top-0 left-0 w-full z-20 transition-all duration-300" id="nav-bar">
-  <nav class="container mx-auto px-4 py-2 flex justify-between items-center bg-transparent text-white">
-    <!-- Logo -->
+<header id="nav-bar" class="fixed top-0 left-0 w-full z-20 transition-all duration-300 bg-transparent">
+  <nav class="container mx-auto px-4 py-2 flex justify-between items-center text-white">
+    
+    <!-- Logo on the left -->
     <div class="flex items-center space-x-2">
       <img src="images/logo.png" alt="Gracerich Enterprise Logo" class="h-20 sm:h-24 md:h-28">
     </div>
     
-    <!-- Navigation Links -->
-    <ul class="hidden md:flex space-x-6">
-      <li><a href="#" class="hover:text-gray-300">Home</a></li>
-      <li><a href="#" class="hover:text-gray-300">About</a></li>
-      <li><a href="#" class="hover:text-gray-300">Services</a></li>
-      <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex space-x-6 items-center">
+      <li>
+        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
+          <fa-icon [icon]="faHome"></fa-icon>
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
+          <fa-icon [icon]="faInfo"></fa-icon>
+          <span>About</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
+          <fa-icon [icon]="faServices"></fa-icon>
+          <span>Services</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
+          <fa-icon [icon]="faContact"></fa-icon>
+          <span>Contact</span>
+        </a>
+      </li>
     </ul>
-  
-    <!-- Hamburger Menu for Mobile -->
-    <button id="menu-toggle" class="block md:hidden text-white focus:outline-none">
+    
+
+    <!-- Hamburger Icon on the Right -->
+    <button (click)="toggleSidebar()" class="block md:hidden text-white focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
       </svg>
     </button>
+
   </nav>
-  
-  <!-- Mobile Menu -->
-  <ul id="menu" class="hidden md:hidden flex-col bg-gray-800 text-white space-y-2 p-4">
-    <li><a href="#" class="block hover:text-gray-300">Home</a></li>
-    <li><a href="#" class="block hover:text-gray-300">About</a></li>
-    <li><a href="#" class="block hover:text-gray-300">Services</a></li>
-    <li><a href="#" class="block hover:text-gray-300">Contact</a></li>
-  </ul>
 </header>
+
+<!-- Sidebar Menu Overlay -->
+<div 
+  class="fixed inset-0 bg-black bg-opacity-50 z-30 transition-opacity duration-300" 
+  [class.hidden]="!isSidebarOpen"
+  [class.opacity-0]="!isSidebarOpen"
+  [class.opacity-100]="isSidebarOpen"
+  (click)="closeSidebar()">
+</div>
+
+<!-- Left Sidebar -->
+<div 
+  class="fixed top-0 left-0 h-full w-64 bg-[#f0eedf] z-40 transform transition-transform duration-300 ease-in-out"
+  [class.translate-x-0]="isSidebarOpen"
+  [class.-translate-x-full]="!isSidebarOpen"
+  [ngStyle]="{'transform': isSidebarOpen ? 'translateX(0)' : 'translateX(-100%)'}">
+  
+  <div class="flex justify-end p-4">
+    <button (click)="closeSidebar()" class="text-gray-500 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+  
+  <div class="flex justify-center items-center py-4">
+    <img src="images/favicon.png" alt="Gracerich Enterprise Logo" class="h-24">
+  </div>
+  
+  <ul class="flex flex-col text-black space-y-4 p-4">
+    <li class="flex items-center space-x-2">
+      <fa-icon [icon]="faHome" class="text-gray-500"></fa-icon>
+      <a href="#" class="block py-2 hover:text-gray-300">Home</a>
+    </li>
+    
+    <li class="flex items-center space-x-2">
+      <fa-icon [icon]="faInfo" class="text-gray-500"></fa-icon>
+      <a href="#" class="block py-2 hover:text-gray-300">About</a>
+    </li>
+  
+    <li class="flex items-center space-x-2">
+      <fa-icon [icon]="faServices" class="text-gray-500"></fa-icon>
+      <a href="#" class="block py-2 hover:text-gray-300">Services</a>
+    </li>
+  
+    <li class="flex items-center space-x-2">
+      <fa-icon [icon]="faContact" class="text-gray-500"></fa-icon>
+      <a href="#" class="block py-2 hover:text-gray-300">Contact</a>
+    </li>
+  </ul>
+  
+  
+</div>

@@ -1,0 +1,13 @@
+body.no-scroll {
+    overflow: hidden;
+    padding-right: 17px; 
+  }
+  
+  .transform {
+    will-change: transform;
+  }
+  
+  .active-nav-item {
+    color: #ff511a;
+    font-weight: bold;
+  }

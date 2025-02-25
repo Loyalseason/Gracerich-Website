@@ -10,6 +10,7 @@ import { StaffComponent } from './staff/staff.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { CommonModule } from '@angular/common';
 
 // import { ProductsComponent } from "./products/products.component";
 // import { AboutUsComponent } from "./about-us/about-us.component";
@@ -27,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     StaffComponent,
     AboutUsComponent,
     ContactUsComponent,
-    FooterComponent
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
