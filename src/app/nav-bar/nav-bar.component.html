@@ -7,33 +7,32 @@
     </div>
     
     <!-- Desktop Menu -->
+    <!-- <ul class="hidden md:flex space-x-6 items-center">
+      <li *ngFor="let item of navItems">
+        <a [routerLink]="item.path" routerLinkActive="text-gray-300" class="flex items-center space-x-2 hover:text-gray-300">
+          <fa-icon [icon]="item.icon"></fa-icon>
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    </ul> -->
+    <!-- <ul class="hidden md:flex space-x-6 items-center">
+      <li *ngFor="let item of navItems">
+        <a (click)="scrollToSection(item.fragment)" class="flex items-center space-x-2 hover:text-gray-300 cursor-pointer">
+          <fa-icon [icon]="item.icon"></fa-icon>
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+    </ul> -->
+    
+
     <ul class="hidden md:flex space-x-6 items-center">
-      <li>
-        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
-          <fa-icon [icon]="faHome"></fa-icon>
-          <span>Home</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
-          <fa-icon [icon]="faInfo"></fa-icon>
-          <span>About</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
-          <fa-icon [icon]="faServices"></fa-icon>
-          <span>Services</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" class="flex items-center space-x-2 hover:text-gray-300">
-          <fa-icon [icon]="faContact"></fa-icon>
-          <span>Contact</span>
+      <li *ngFor="let item of navItems">
+        <a (click)="scrollToComponent(item.selector)" class="flex items-center space-x-2 hover:text-gray-300 cursor-pointer">
+          <fa-icon [icon]="item.icon"></fa-icon>
+          <span>{{ item.label }}</span>
         </a>
       </li>
     </ul>
-    
 
     <!-- Hamburger Icon on the Right -->
     <button (click)="toggleSidebar()" class="block md:hidden text-white focus:outline-none">
@@ -73,27 +72,23 @@
     <img src="images/favicon.png" alt="Gracerich Enterprise Logo" class="h-24">
   </div>
   
+  <!-- <ul class="flex flex-col text-black space-y-4 p-4">
+    <li *ngFor="let item of navItems" class="flex items-center space-x-2">
+      <fa-icon [icon]="item.icon" class="text-gray-500"></fa-icon>
+      <a [routerLink]="item.path" routerLinkActive="text-gray-600" class="block py-2 hover:text-gray-300">{{ item.label }}</a>
+    </li>
+  </ul> -->
+  <!-- <ul class="flex flex-col text-black space-y-4 p-4">
+    <li *ngFor="let item of navItems" class="flex items-center space-x-2">
+      <fa-icon [icon]="item.icon" class="text-gray-500"></fa-icon>
+      <a (click)="scrollToSection(item.fragment)" class="block py-2 hover:text-gray-300 cursor-pointer">{{ item.label }}</a>
+    </li>
+  </ul> -->
+
   <ul class="flex flex-col text-black space-y-4 p-4">
-    <li class="flex items-center space-x-2">
-      <fa-icon [icon]="faHome" class="text-gray-500"></fa-icon>
-      <a href="#" class="block py-2 hover:text-gray-300">Home</a>
-    </li>
-    
-    <li class="flex items-center space-x-2">
-      <fa-icon [icon]="faInfo" class="text-gray-500"></fa-icon>
-      <a href="#" class="block py-2 hover:text-gray-300">About</a>
-    </li>
-  
-    <li class="flex items-center space-x-2">
-      <fa-icon [icon]="faServices" class="text-gray-500"></fa-icon>
-      <a href="#" class="block py-2 hover:text-gray-300">Services</a>
-    </li>
-  
-    <li class="flex items-center space-x-2">
-      <fa-icon [icon]="faContact" class="text-gray-500"></fa-icon>
-      <a href="#" class="block py-2 hover:text-gray-300">Contact</a>
+    <li *ngFor="let item of navItems" class="flex items-center space-x-2">
+      <fa-icon [icon]="item.icon" class="text-gray-500"></fa-icon>
+      <a (click)="scrollToComponent(item.selector)" class="block py-2 hover:text-gray-300 cursor-pointer">{{ item.label }}</a>
     </li>
   </ul>
-  
-  
 </div>
