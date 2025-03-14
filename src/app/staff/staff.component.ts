@@ -16,18 +16,28 @@ export class StaffComponent {
     },
     {
       name: 'Grace Asante',
-      position: 'Head Baker',
+      position: 'COO',
       image: 'images/bakerybackground.jpg'
     },
     {
       name: 'Abigail Asante',
-      position: 'Operations Manager',
-      image: 'images/bakerybackground.jpg'
+      position: 'Administrative Support',
+      image: 'images/Abigail.jpg'
     },
     {
       name: 'David Okonkwo',
-      position: 'Sales & Marketing',
+      position: 'Prodution Supervisor',
       image: 'images/bakerybackground.jpg'
+    },
+    {
+      name: 'Emmanuel Asante',
+      position: 'Technical Supervisor',
+      image: 'images/bakerybackground.jpg'
+    },
+    {
+      name: 'Emmanuel Asante',
+      position: 'Technical Support',
+      image: 'images/Emmanuel.jpg'
     }
   ];
 }

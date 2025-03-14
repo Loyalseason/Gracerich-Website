@@ -114,12 +114,16 @@ export class NavBarComponent implements OnInit, OnDestroy {
 
     if (navbar) {
       if (window.scrollY > 10) {
-        navbar.style.backgroundColor = "rgba(255, 81, 26, 0.8)";
+        navbar.style.backgroundColor = "rgba(255, 81, 26, 0.7)"; 
+        navbar.style.backdropFilter = "blur(8px)"; 
         navbar.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
       } else {
-        navbar.style.backgroundColor = "rgba(0, 0, 0, 0)";
+        navbar.style.backgroundColor = "rgba(255, 255, 255, 0)";
+        navbar.style.backdropFilter = "none";
         navbar.style.boxShadow = "none";
       }
     }
+    
+    
   }
 }

@@ -5,25 +5,7 @@
     <div class="flex items-center space-x-2">
       <img src="images/logo.png" alt="Gracerich Enterprise Logo" class="h-20 sm:h-24 md:h-28">
     </div>
-    
-    <!-- Desktop Menu -->
-    <!-- <ul class="hidden md:flex space-x-6 items-center">
-      <li *ngFor="let item of navItems">
-        <a [routerLink]="item.path" routerLinkActive="text-gray-300" class="flex items-center space-x-2 hover:text-gray-300">
-          <fa-icon [icon]="item.icon"></fa-icon>
-          <span>{{ item.label }}</span>
-        </a>
-      </li>
-    </ul> -->
-    <!-- <ul class="hidden md:flex space-x-6 items-center">
-      <li *ngFor="let item of navItems">
-        <a (click)="scrollToSection(item.fragment)" class="flex items-center space-x-2 hover:text-gray-300 cursor-pointer">
-          <fa-icon [icon]="item.icon"></fa-icon>
-          <span>{{ item.label }}</span>
-        </a>
-      </li>
-    </ul> -->
-    
+
 
     <ul class="hidden md:flex space-x-6 items-center">
       <li *ngFor="let item of navItems">
@@ -72,19 +54,7 @@
     <img src="images/favicon.png" alt="Gracerich Enterprise Logo" class="h-24">
   </div>
   
-  <!-- <ul class="flex flex-col text-black space-y-4 p-4">
-    <li *ngFor="let item of navItems" class="flex items-center space-x-2">
-      <fa-icon [icon]="item.icon" class="text-gray-500"></fa-icon>
-      <a [routerLink]="item.path" routerLinkActive="text-gray-600" class="block py-2 hover:text-gray-300">{{ item.label }}</a>
-    </li>
-  </ul> -->
-  <!-- <ul class="flex flex-col text-black space-y-4 p-4">
-    <li *ngFor="let item of navItems" class="flex items-center space-x-2">
-      <fa-icon [icon]="item.icon" class="text-gray-500"></fa-icon>
-      <a (click)="scrollToSection(item.fragment)" class="block py-2 hover:text-gray-300 cursor-pointer">{{ item.label }}</a>
-    </li>
-  </ul> -->
-
+  
   <ul class="flex flex-col text-black space-y-4 p-4">
     <li *ngFor="let item of navItems" class="flex items-center space-x-2">
       <fa-icon [icon]="item.icon" class="text-gray-500"></fa-icon>

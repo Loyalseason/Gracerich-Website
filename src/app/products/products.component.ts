@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit} from '@angular/core';
+import { Component, OnDestroy, AfterViewInit, NgZone } from '@angular/core';
 
 interface Product {
   title: string;
@@ -9,50 +9,63 @@ interface Product {
 
 @Component({
   selector: 'app-products',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './products.component.html',
-  styleUrl: './products.component.css'
+  styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements AfterViewInit, OnDestroy {
   currentIndex = 0;
-  
+  autoSlideInterval: any;
+  isPaused = false;
+
   products: Product[] = [
-    {
-      title: 'Product 1',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      image: 'images/bakerybackground.jpg' // Replace with your image path
-    },
-    {
-      title: 'Product 2',
-      description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-      image: '/images/bakerybackground.jpg'
-    },
-    {
-      title: 'Product 3',
-      description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.',
-      image: '/images/bakerybackground.jpg'
-    },
-    {
-      title: 'Product 4',
-      description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem.',
-      image: '/images/bakerybackground.jpg'
-    }
+    { title: 'Product 1', description: 'Lorem ipsum dolor sit amet.', image: 'images/bakerybackground.jpg' },
+    { title: 'Product 2', description: 'Duis aute irure dolor in reprehenderit.', image: 'images/bakerybackground.jpg' },
+    { title: 'Product 3', description: 'Sed ut perspiciatis unde omnis iste natus.', image: 'images/bakerybackground.jpg' },
+    { title: 'Product 4', description: 'Nemo enim ipsam voluptatem quia voluptas.', image: 'images/bakerybackground.jpg' }
   ];
 
-  constructor() { }
+  constructor(private zone: NgZone) {}
 
-  ngOnInit(): void { }
+  ngAfterViewInit(): void {
+    this.startAutoSlide();
+  }
 
-  previousSlide(): void {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
+  ngOnDestroy(): void {
+    this.clearAutoSlide();
+  }
+
+  startAutoSlide(): void {
+    this.zone.runOutsideAngular(() => {
+      this.autoSlideInterval = setInterval(() => {
+        if (!this.isPaused) {
+          this.zone.run(() => this.nextSlide());
+        }
+      }, 5000);
+    });
+  }  
+
+  clearAutoSlide(): void {
+    if (this.autoSlideInterval) {
+      clearInterval(this.autoSlideInterval);
     }
   }
 
+  pauseAutoSlide(): void {
+    this.isPaused = true;
+  }
+
+  resumeAutoSlide(): void {
+    this.isPaused = false;
+  }
+
+  previousSlide(): void {
+    this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.products.length - 1;
+  }
+
   nextSlide(): void {
-    if (this.currentIndex < this.products.length - 1) {
-      this.currentIndex++;
-    }
+    this.currentIndex = (this.currentIndex + 1) % this.products.length;
   }
 
   goToSlide(index: number): void {
